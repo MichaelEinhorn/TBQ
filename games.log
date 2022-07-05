@@ -7889,3 +7889,76 @@
  17:22 Kill: 1022 1 22: <world> killed Grunt by MOD_TRIGGER_HURT
  17:22 ShutdownGame:
  17:22 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \g_maxGameClients\0\capturelimit\0\sv_maxclients\8\timelimit\0\fraglimit\0\dmflags\0\g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_punkbuster\0\sv_hostname\TBQ\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\q3dm1\sv_privateClients\0\sv_allowDownload\0\gamename\TBQ\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\The_Basic_QPlayer\t\0\model\lucy/angel\hmodel\lucy/angel\g_redteam\\g_blueteam\\c1\2\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\The_Basic_QPlayer\t\0\model\lucy/angel\hmodel\lucy/angel\g_redteam\\g_blueteam\\c1\2\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:02 Item: 0 weapon_hackgun
+  0:04 Item: 0 weapon_hackgun
+  0:04 Item: 0 item_armor_shard
+  0:04 Item: 0 item_armor_shard
+  0:04 Item: 0 item_armor_shard
+  0:07 Item: 0 item_armor_shard
+  0:08 Item: 0 item_armor_shard
+  0:08 Item: 0 item_armor_shard
+  0:12 Item: 0 weapon_hackgun
+  0:15 Item: 0 weapon_hackgun
+  0:19 Item: 0 weapon_hackgun
+  0:20 Item: 0 weapon_hackgun
+  0:26 Item: 0 weapon_hackgun
+  0:29 Item: 0 weapon_hackgun
+  0:31 Item: 0 weapon_hackgun
+  0:34 Item: 0 item_armor_shard
+  0:34 Item: 0 item_armor_shard
+  0:37 Item: 0 weapon_hackgun
+  0:40 Item: 0 item_armor_shard
+  0:40 Item: 0 item_armor_shard
+  0:40 Item: 0 item_armor_shard
+  0:43 Item: 0 weapon_hackgun
+  0:43 Item: 0 item_armor_shard
+  0:45 Item: 0 weapon_hackgun
+  0:51 Item: 0 weapon_hackgun
+  0:53 Item: 0 weapon_hackgun
+  0:59 Item: 0 weapon_hackgun
+  1:02 Item: 0 weapon_hackgun
+  1:05 Item: 0 weapon_hackgun
+  1:10 Item: 0 weapon_hackgun
+  1:11 Item: 0 weapon_hackgun
+  1:16 Item: 0 weapon_hackgun
+  1:20 Item: 0 weapon_hackgun
+  1:23 Item: 0 item_armor_shard
+  1:26 Item: 0 weapon_hackgun
+  1:27 Item: 0 item_armor_shard
+  1:27 Item: 0 item_armor_shard
+  1:30 Item: 0 weapon_hackgun
+  1:39 Item: 0 weapon_hackgun
+  1:40 Item: 0 weapon_hackgun
+  1:41 Item: 0 item_armor_shard
+  1:50 Item: 0 item_armor_shard
+  1:50 Item: 0 item_armor_shard
+  1:52 Item: 0 weapon_hackgun
+  1:54 Item: 0 weapon_hackgun
+  1:55 Item: 0 item_armor_shard
+  2:04 Item: 0 weapon_hackgun
+  2:06 Item: 0 item_armor_shard
+  2:16 Item: 0 item_armor_shard
+  2:16 Item: 0 item_armor_shard
+  2:19 Item: 0 weapon_hackgun
+  2:24 Item: 0 item_armor_shard
+  2:37 Item: 0 item_armor_shard
+  2:42 Item: 0 weapon_hackgun
+  2:44 Item: 0 weapon_hackgun
+  2:49 Item: 0 item_armor_shard
+  2:49 Item: 0 item_armor_shard
+  2:49 Item: 0 item_armor_shard
+  2:51 Item: 0 weapon_hackgun
+  2:54 Item: 0 item_armor_shard
+  2:55 Item: 0 weapon_hackgun
+  2:56 Item: 0 item_armor_shard
+  2:58 Item: 0 weapon_hackgun
+  3:17 Item: 0 item_armor_body
+  3:37 Item: 0 weapon_hackgun
+  3:56 ShutdownGame:
+  3:56 ------------------------------------------------------------
