@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: botlib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP45.tmp" with contents
+[
+/nologo /G5 /MTd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_LIB" /D "BOTLIB" /D "DEBUG" /D "_MBCS" /FR".\Debug/" /Fp".\Debug/botlib.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /GZ  /GZ /c 
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_bspq3.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_cluster.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_debug.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_entity.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_file.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_main.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_move.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_optimize.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_reach.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_route.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_routealt.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_aas_sample.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_char.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_chat.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_gen.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_goal.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_move.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_weap.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ai_weight.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_ea.c"
+"C:\ygpip\quake3\CvZ\code\botlib\be_interface.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_crc.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_libvar.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_log.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_memory.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_precomp.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_script.c"
+"C:\ygpip\quake3\CvZ\code\botlib\l_struct.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP45.tmp" 
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP46.tmp" with contents
+[
+/nologo /out:".\Debug\botlib.lib" 
+.\Debug\be_aas_bspq3.obj
+.\Debug\be_aas_cluster.obj
+.\Debug\be_aas_debug.obj
+.\Debug\be_aas_entity.obj
+.\Debug\be_aas_file.obj
+.\Debug\be_aas_main.obj
+.\Debug\be_aas_move.obj
+.\Debug\be_aas_optimize.obj
+.\Debug\be_aas_reach.obj
+.\Debug\be_aas_route.obj
+.\Debug\be_aas_routealt.obj
+.\Debug\be_aas_sample.obj
+.\Debug\be_ai_char.obj
+.\Debug\be_ai_chat.obj
+.\Debug\be_ai_gen.obj
+.\Debug\be_ai_goal.obj
+.\Debug\be_ai_move.obj
+.\Debug\be_ai_weap.obj
+.\Debug\be_ai_weight.obj
+.\Debug\be_ea.obj
+.\Debug\be_interface.obj
+.\Debug\l_crc.obj
+.\Debug\l_libvar.obj
+.\Debug\l_log.obj
+.\Debug\l_memory.obj
+.\Debug\l_precomp.obj
+.\Debug\l_script.obj
+.\Debug\l_struct.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP46.tmp"
+<h3>Output Window</h3>
+Compiling...
+be_aas_bspq3.c
+be_aas_cluster.c
+be_aas_debug.c
+be_aas_entity.c
+be_aas_file.c
+be_aas_main.c
+be_aas_move.c
+be_aas_optimize.c
+be_aas_reach.c
+be_aas_route.c
+be_aas_routealt.c
+be_aas_sample.c
+be_ai_char.c
+be_ai_chat.c
+be_ai_gen.c
+be_ai_goal.c
+be_ai_move.c
+be_ai_weap.c
+be_ai_weight.c
+be_ea.c
+be_interface.c
+l_crc.c
+l_libvar.c
+l_log.c
+l_memory.c
+l_precomp.c
+l_script.c
+l_struct.c
+Creating library...
+
+
+
+<h3>Results</h3>
+botlib.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

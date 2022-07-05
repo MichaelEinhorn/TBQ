@@ -1,0 +1,395 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Quake III Arena
+Date: Fri, 19 Oct 2007 11:15:22 -0400
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://tldp.org/HOWTO/archived/Game-Server-HOWTO/quake3.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Quake III Arena</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2900.3157" name=3DGENERATOR><LINK=20
+title=3D"Game Server HOWTO" href=3D"index.html" rel=3DHOME><LINK =
+title=3D"Quake II"=20
+href=3D"quake2.html" rel=3DPREVIOUS><LINK title=3DHalf-Life =
+href=3D"halflife.html"=20
+rel=3DNEXT></HEAD>
+<BODY class=3DSECT1 text=3D#000000 vLink=3D#840084 aLink=3D#0000ff =
+link=3D#0000ff=20
+bgColor=3D#ffffff>
+<DIV class=3DNAVHEADER>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%"=20
+summary=3D"Header navigation table" border=3D0>
+  <TBODY>
+  <TR>
+    <TH align=3Dmiddle colSpan=3D3>Game Server HOWTO</TH></TR>
+  <TR>
+    <TD vAlign=3Dbottom align=3Dleft width=3D"10%"><A accessKey=3DP=20
+      =
+href=3D"http://tldp.org/HOWTO/archived/Game-Server-HOWTO/quake2.html">Pre=
+v</A></TD>
+    <TD vAlign=3Dbottom align=3Dmiddle width=3D"80%"></TD>
+    <TD vAlign=3Dbottom align=3Dright width=3D"10%"><A accessKey=3DN=20
+      =
+href=3D"http://tldp.org/HOWTO/archived/Game-Server-HOWTO/halflife.html">N=
+ext</A></TD></TR></TBODY></TABLE>
+<HR align=3Dleft width=3D"100%">
+</DIV>
+<DIV class=3DSECT1>
+<H1 class=3DSECT1><A name=3DQUAKE3></A>5. Quake III Arena</H1>
+<P>Quake III is the latest game in the Quake series, designed as a =
+multiplayer=20
+deathmatch game. </P>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3SYSREQ></A>5.1. System requirements</H2>
+<P>As always, the system requirements vary depending on the number of =
+players on=20
+your server. </P>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P>Pentium II 266MHz. More CPU =3D more players.</P>
+  <LI>
+  <P>At least 64 MB RAM.</P>
+  <LI>
+  <P>Kernel 2.2.9 or higher, glibc 2.1.</P>
+  <LI>
+  <P>The *.pk3 files from the Quake III Arena CD-ROM.</P>
+  <LI>
+  <P>At least ~500 MB free space on your HDD.</P>
+  <LI>
+  <P>Enough bandwidth if you're going to run an Internet server. More =
+players =3D=20
+  more bandwidth.</P></LI></UL>
+<P></P></DIV>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3INSTALLING></A>5.2. Installing</H2>
+<P>First download the latest Q3A Linux point release. As of this version =
+of the=20
+HOWTO it's v1.32b, but that may have changed when you read this.</P>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P><A=20
+  =
+href=3D"ftp://ftp.sunet.se/pub/pc/games/idgames2/idstuff/quake3/linux/lin=
+uxq3apoint-1.32b.x86.run"=20
+  =
+target=3D_top>ftp://ftp.sunet.se/pub/pc/games/idgames2/idstuff/quake3/lin=
+ux/linuxq3apoint-1.32b.x86.run</A></P></LI></UL>
+<P></P>
+<P>Run the installer:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>sh =
+linuxq3apoint-1.32b.x86.run</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>The default installation directory is <TT=20
+class=3DFILENAME>/usr/local/games/quake3</TT>. Copy the *.pk3 files from =
+the Q3A=20
+CD-ROM to the baseq3 directory.</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>cp =
+/mnt/cdrom/Quake3/baseq3/*.pk3 =
+/usr/local/games/quake3/baseq3</B></PRE></FONT></TD></TR></TBODY></TABLE>=
+
+<P>Go to the Q3 directory and test the dedicated server, <TT=20
+class=3DLITERAL>./q3ded</TT>.</P></DIV>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3CONFIGURING></A>5.3. Configuring</H2>
+<P>Now it's time to write some config files. They contain all the =
+variables the=20
+server will use (maps to be played, gametype, etc..). All cfg's must be =
+in the=20
+baseq3 directory. The file q3config.cfg is <EM>always</EM> executed. I =
+recommend=20
+that you have different cfg's for different gametypes, for example =
+ctf.cfg,=20
+ffa.cfg, and so on. You can use q3config.cfg for general settings, and =
+then=20
+another cfg on top of it. Run <TT class=3DLITERAL>./linuxq3ded +exec=20
+configfile.cfg</TT> to start the dedicated server and execute the =
+specified=20
+config file. This is what my FFA (Free For All) config file looks =
+like:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN>set sv_hostname =
+"Foofighters FFA DM"
+set sv_maxclients 10
+set g_motd "To be or not to be..."
+set g_forcerespawn 15
+set rconpassword "password"
+set g_gametype 1
+set fraglimit 50
+set timelimit 20
+
+//Here's the map-cycle. When fraglimit or timelimit is reached, the map =
+is automatically changed.
+//Otherwise it would just play the same map again.
+set m1 "map q3dm1; set nextmap vstr m2"
+set m2 "map q3dm2; set nextmap vstr m3"
+set m3 "map q3dm3; set nextmap vstr m4"
+set m4 "map q3tourney1; set nextmap vstr m5"
+set m5 "map q3dm4; set nextmap vstr m6"
+set m6 "map q3dm5; set nextmap vstr m7"
+set m7 "map q3dm6; set nextmap vstr m8"
+set m8 "map q3tourney2; set nextmap vstr m9"
+set m9 "map q3dm7; set nextmap vstr m10"
+set m10 "map q3dm8; set nextmap vstr m11"
+set m11 "map q3dm9; set nextmap vstr m12"
+set m12 "map q3tourney3; set nextmap vstr m13"
+set m13 "map q3dm10; set nextmap vstr m14"
+set m14 "map q3dm11; set nextmap vstr m15"
+set m15 "map q3dm12; set nextmap vstr m16"
+set m16 "map q3tourney4; set nextmap vstr m17"
+set m17 "map q3dm13; set nextmap vstr m18"
+set m18 "map q3dm14; set nextmap vstr m19"
+set m19 "map q3dm15; set nextmap vstr m20"
+set m20 "map q3tourney5; set nextmap vstr m21"
+set m21 "map q3dm16; set nextmap vstr m22"
+set m22 "map q3dm17; set nextmap vstr m23"
+set m23 "map q3dm18; set nextmap vstr m24"
+set m24 "map q3dm19; set nextmap vstr m25"
+set m25 "map q3tourney6; set nextmap vstr =
+m1"</PRE></FONT></TD></TR></TBODY></TABLE>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P><TT class=3DLITERAL>sv_maxclients</TT> - Max number of players.</P>
+  <LI>
+  <P><TT class=3DLITERAL>g_motd</TT> - The message people will see on =
+the bottom=20
+  of the screen when they connect.</P>
+  <LI>
+  <P><TT class=3DLITERAL>g_forcerespawn</TT> - Number of seconds until a =
+client is=20
+  automatically respawned, if the client doesn't do it by itself. Set it =
+to 0 to=20
+  disable force respawn.</P>
+  <LI>
+  <P><TT class=3DLITERAL>g_gametype</TT> - Gametype. 1 =3D DM, 2 =3D =
+Tourney (1on1), 3=20
+  =3D Team DM, 4 =3D CTF.</P></LI></UL>
+<P></P>
+<P>Start the server with <TT class=3DLITERAL>./q3ded +exec =
+configfile.cfg</TT>.=20
+You can execute cfg's directly from the server console with the command =
+<TT=20
+class=3DLITERAL>exec configfile.cfg</TT>. If you want to run the server =
+in the=20
+background, immune to hangups, start using <TT class=3DLITERAL>nohup =
+./q3ded +exec=20
+ffa.cfg &amp;</TT>.</P></DIV>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3CTF></A>5.4. Q3CTF (Capture The Flag)</H2>
+<P>CTF is built into Q3A (Q3CTF). Four CTF maps are included with Q3A, =
+but you=20
+will want to download Dave 'Zoid' Kirsch's (the author of CTF for =
+Q1/Q2/Q3)=20
+excellent Q3WCTF maps - <A=20
+href=3D"ftp://ftp.sunet.se/pubi/pc/games/idgames2/planetquake/mappacks/q3=
+wctf.zip"=20
+target=3D_top>ftp://ftp.sunet.se/pubi/pc/games/idgames2/planetquake/mappa=
+cks/q3wctf.zip</A>=20
+(7.8 MB). Here's a CTF cfg which includes all CTF maps in the mapcycle. =
+Paste it=20
+in a new file, ctf.cfg, in the baseq3 directory:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN>set sv_hostname =
+"Foofighters CTF"
+set sv_maxclients 16
+set g_motd "To be or not to be.."
+set g_forcerespawn 10
+set rconpassword "password"
+set g_gametype 4
+
+set m1 "capturelimit 8; map q3ctf1; set nextmap vstr m2"
+set m2 "capturelimit 8; map q3ctf2 ; set nextmap vstr m3"
+set m3 "capturelimit 8; map q3ctf3 ; set nextmap vstr m4"
+set m4 "capturelimit 8; map q3wctf1 ; set nextmap vstr m5"
+set m5 "capturelimit 8; map q3wctf2 ; set nextmap vstr m6"
+set m6 "capturelimit 8; map q3wctf3 ; set nextmap vstr m1"
+
+vstr m1</PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Start with <TT class=3DLITERAL>./q3ded +exec ctf.cfg</TT>.</P></DIV>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3RA3></A>5.5. Rocket Arena 3</H2>
+<P><A href=3D"http://www.planetquake.com/servers/arena/" =
+target=3D_top>Rocket=20
+Arena</A> 3 is the popular Quake3 version of Rocket Arena. You need the=20
+following files:</P>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P><A =
+href=3D"ftp://ftp.sunet.se/pube/os/FreeBSD/ports/distfiles/ra315sv.zip"=20
+  =
+target=3D_top>ftp://ftp.sunet.se/pube/os/FreeBSD/ports/distfiles/ra315sv.=
+zip</A>=20
+  </P>
+  <LI>
+  <P><A=20
+  =
+href=3D"ftp://ftp.sunet.se/pube/os/FreeBSD/ports/distfiles/ra315cl_linuxm=
+ac.zip"=20
+  =
+target=3D_top>ftp://ftp.sunet.se/pube/os/FreeBSD/ports/distfiles/ra315cl_=
+linuxmac.zip</A>=20
+  - required client files (maps).</P></LI></UL>
+<P></P>
+<P>Create a directory for RA3 and extract the files: </P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>cd /usr/local/games/quake3</B>
+<TT class=3DPROMPT>$</TT> <B class=3DCOMMAND>mkdir arena</B>
+<TT class=3DPROMPT>$</TT> <B class=3DCOMMAND>unzip ~/ra315sv.zip -d =
+arena</B>
+<TT class=3DPROMPT>$</TT> <B class=3DCOMMAND>unzip =
+~/ra315cl_linuxmac.zip -d =
+arena</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Edit <TT class=3DFILENAME>server.cfg</TT> to your liking. Start the =
+server with=20
+the following command:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>./q3ded +set fs_game arena +set =
+sv_pure 0 +bot_enable 0 +set dedicated 2 +set net_port 27960 +exec =
+server.cfg</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Use <TT class=3DLITERAL>+set dedicated 1</TT> to run a private server =
+or <TT=20
+class=3DLITERAL>+set dedicated 2</TT> to run a public. For more info on =
+RA3=20
+configuration options, read <TT class=3DFILENAME>readsrv.txt</TT> in =
+your <TT=20
+class=3DFILENAME>arena</TT> directory.</P></DIV>
+<DIV class=3DSECT2>
+<H2 class=3DSECT2><A name=3DQ3ALLIANCE></A>5.6. Alliance</H2>
+<P><A href=3D"http://www.planetquake.com/alliance/" =
+target=3D_top>Alliance</A> is a=20
+popular CTF/DM mod. It offers three different game styles:</P>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P><EM>Alliance</EM> - Enhanced CTF with offhanded grappling hook =
+(players can=20
+  use the grapple and shoot their weapons at the same time).</P>
+  <LI>
+  <P><EM>Combat</EM> - Resembles the mod Expert Q2. Players spawn with =
+all=20
+  weapons plus health and ammo regenerate. Slightly different weapons =
+balance,=20
+  physics and grappling hook style.</P>
+  <LI>
+  <P><EM>Instagib</EM> - An interesting (and very entertaining) game =
+type where=20
+  players spawn with an enhanced rail gun with an infinite ammount of =
+ammo. When=20
+  you shoot your enemy they are instantly gibbed (killed), so health is =
+not an=20
+  issue here (also, the rail gun is the only weapon).</P></LI></UL>
+<P></P>
+<P>All the above game styles can be played as CTF, FFA, Team DM or =
+Tourney. Note=20
+that the mod was made with CTF in mind. Anyway, you need the following=20
+files:</P>
+<P>
+<P></P>
+<UL>
+  <LI>
+  <P><A href=3D"http://www.hlrs.de/people/frenzel/actf/alliance30.zip"=20
+  =
+target=3D_top>http://www.hlrs.de/people/frenzel/actf/alliance30.zip</A> =
+</P>
+  <LI>
+  <P><A=20
+  =
+href=3D"http://www.planetquake3.net/download.php?op=3Dviewdownloaddetails=
+=3D731=3DAlliance_3.3_Upgrade_from_3.0_(.ZIP)"=20
+  =
+target=3D_top>http://www.planetquake3.net/download.php?op=3Dviewdownloadd=
+etails=3D731=3DAlliance_3.3_Upgrade_from_3.0_(.ZIP)</A>=20
+  - 3.0 to 3.3 upgrade.</P></LI></UL>
+<P></P>
+<P>Extract the files:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>cd /usr/local/games/quake3</B>
+<TT class=3DPROMPT>$</TT> <B class=3DCOMMAND>unzip ~/alliance30.zip</B>
+<TT class=3DPROMPT>$</TT> <B class=3DCOMMAND>unzip =
+~/alliance30-33.zip</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Now start the server running your desired gametype. Alliance:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>./q3ded +set dedicated 2 +set =
+fs_game alliance30 +g_gametype 4 +exec sv_alliance.cfg +map =
+actf13</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Combat:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>./q3ded +set dedicated 2 +set =
+fs_game alliance30 +g_gametype 4 +exec sv_combat.cfg +map =
+actf13</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Instagib:</P>
+<TABLE width=3D"100%" bgColor=3D#e0e0e0 border=3D1>
+  <TBODY>
+  <TR>
+    <TD><FONT color=3D#000000><PRE class=3DSCREEN><TT =
+class=3DPROMPT>$</TT> <B class=3DCOMMAND>./q3ded +set dedicated 2 +set =
+fs_game alliance30 +g_gametype 4 +exec sv_instagib.cfg +set fs_basepath =
+$(/bin/pwd) +map actf13</B></PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Edit <TT class=3DLITERAL>maplist.cfg</TT> to change the map rotation. =
+Two large=20
+Alliance map packs can be downloaded from its <A=20
+href=3D"http://www.planetquake.com/alliance/"=20
+target=3D_top>homepage</A>.</P></DIV></DIV>
+<DIV class=3DNAVFOOTER>
+<HR align=3Dleft width=3D"100%">
+
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D"100%"=20
+summary=3D"Footer navigation table" border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop align=3Dleft width=3D"33%"><A accessKey=3DP=20
+      =
+href=3D"http://tldp.org/HOWTO/archived/Game-Server-HOWTO/quake2.html">Pre=
+v</A></TD>
+    <TD vAlign=3Dtop align=3Dmiddle width=3D"34%"><A accessKey=3DH=20
+      =
+href=3D"http://tldp.org/HOWTO/archived/Game-Server-HOWTO/index.html">Home=
+</A></TD>
+    <TD vAlign=3Dtop align=3Dright width=3D"33%"><A accessKey=3DN=20
+      =
+href=3D"http://tldp.org/HOWTO/archived/Game-Server-HOWTO/halflife.html">N=
+ext</A></TD></TR>
+  <TR>
+    <TD vAlign=3Dtop align=3Dleft width=3D"33%">Quake II</TD>
+    <TD vAlign=3Dtop align=3Dmiddle width=3D"34%">&nbsp;</TD>
+    <TD vAlign=3Dtop align=3Dright=20
+width=3D"33%">Half-Life</TD></TR></TBODY></TABLE></DIV></BODY></HTML>
